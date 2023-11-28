@@ -40,7 +40,7 @@ class NoteItem extends StatelessWidget {
                 'Build your career with khaled khalifa',
                 style: TextStyle(
                   color: Colors.black38,
-                  fontSize: 18,
+                  fontSize: 16,
                 ),
               ),
             ),
