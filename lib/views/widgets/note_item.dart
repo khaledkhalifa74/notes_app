@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes/cubits/notes_cubit/notes_cubit.dart';
+import 'package:notes/models/note_model.dart';
 import 'package:notes/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
+  const NoteItem({super.key, required this.note});
 
+final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -21,7 +25,7 @@ class NoteItem extends StatelessWidget {
         ),
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: Colors.orange,
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
@@ -30,8 +34,8 @@ class NoteItem extends StatelessWidget {
             ListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(
-                'Flutter Tips',
-                style: TextStyle(
+                note.title,
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 22,
                 ),
@@ -42,15 +46,19 @@ class NoteItem extends StatelessWidget {
                   bottom: 8,
                 ),
                 child: Text(
-                  'Build your career with khaled khalifa',
-                  style: TextStyle(
+                  note.subTitle,
+                  style: const TextStyle(
                     color: Colors.black38,
                     fontSize: 16,
                   ),
                 ),
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: ()
+                {
+                  note.delete();
+                  BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                },
                 icon: const Icon(
                   Icons.delete,
                   size: 30,
@@ -63,8 +71,8 @@ class NoteItem extends StatelessWidget {
                 right: 16,
               ),
               child: Text(
-                'May 21,2022',
-                style: TextStyle(
+                note.date,
+                style: const TextStyle(
                   color: Colors.black38,
                   fontSize: 14,
                 ),
