@@ -1,17 +1,11 @@
-# notes
+# Notes app
 
-A new Flutter project.
+A simple notes app using flutter framework and hive local storage that you can add custom note, edit and delete it 
 
-## Getting Started
+## I used 
 
-This project is a starting point for a Flutter application.
+- Flutter framework and dart
+- Hive as a local storage
+- Cubit as a state management
+- MVVM design pattern
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# notes_app
