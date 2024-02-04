@@ -12,7 +12,11 @@ final NoteModel note;
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.pushNamed(context, EditNoteView.id);
+        Navigator.push(context, MaterialPageRoute(
+            builder: (context){
+              return EditNoteView(note: note);
+            },
+        ));
       },
       child: Container(
         margin: const EdgeInsets.only(

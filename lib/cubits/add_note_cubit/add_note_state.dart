@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:notes/cubits/add_note_cubit/add_note_cubit.dart';
 
 
 @immutable

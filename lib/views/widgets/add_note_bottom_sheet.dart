@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:notes/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes/cubits/add_note_cubit/add_note_state.dart';
 import 'package:notes/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes/models/note_model.dart';
-import 'package:notes/widgets/custom_button.dart';
-import 'package:notes/widgets/custom_text_field.dart';
+import 'package:notes/views/widgets/colors_list_view.dart';
+import 'package:notes/views/widgets/custom_button.dart';
+import 'package:notes/views/widgets/custom_text_field.dart';
+
 
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({super.key});
@@ -89,6 +90,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 32,
           ),
+          const ColorsListView(),
+          const SizedBox(
+            height: 32,
+          ),
           BlocBuilder<AddNoteCubit,AddNoteState>(
             builder: (context, state) {
               return CustomButton(
@@ -121,3 +126,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
     );
   }
 }
+
+
+
+
+
+
